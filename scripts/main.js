@@ -81,7 +81,7 @@ function displayCards(collection) {
 
     db.collection(collection).get()
         .then(snap => {
-            //var i = 1;  //if you want to use commented out section
+            var i = 1;  //if you want to use commented out section
             snap.forEach(doc => { //iterate thru each doc
                 var title = doc.data().name;        // get value of the "name" key
                 var details = doc.data().details;   // get value of the "details" key
@@ -94,9 +94,9 @@ function displayCards(collection) {
                 newcard.querySelector('.card-image').src = `./images/${hikeID}.jpg`; //Example: NV01.jpg
 
                 //give unique ids to all elements for future use
-                // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-                // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-                // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
+                newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
+                newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
+                newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
 
                 //attach to gallery
                 document.getElementById(collection + "-go-here").appendChild(newcard);
